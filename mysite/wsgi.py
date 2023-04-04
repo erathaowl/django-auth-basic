@@ -1,5 +1,5 @@
 """
-WSGI config for mysite project.
+WSGI config for current project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -10,7 +10,8 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from .settings import PROJECT_NAME
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', f"{PROJECT_NAME}.settings")
 
 application = get_wsgi_application()

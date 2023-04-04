@@ -3,8 +3,8 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <div class="row justify-content-center">
-    <div class="col-6">
+  <div class="justify-content-center">
+    {% comment %} <div class="col-6"> {% endcomment %}
       <div class="card">
         <div class="card-body">
           <h2>Log in</h2>
@@ -12,10 +12,10 @@
             {% csrf_token %}
             {{ form|crispy }}
             <button type="submit" class="btn btn-primary">Log in</button>
-            <a href="{% url 'password_reset' %}" class="btn btn-link">Forgot your password?</a>
+            {% comment %} <a href="{% url 'password_reset' %}" class="btn btn-link">Forgot your password?</a> {% endcomment %}
           </form>
         </div>
       </div>
-    </div>
+    {% comment %} </div> {% endcomment %}
   </div>
 {% endblock %}

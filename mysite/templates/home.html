@@ -2,8 +2,14 @@
 
 {% block content %}
   <h2>Homepage</h2>
-  <p>Welcome to My Site, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
+  <p>Welcome to {{ settings.SITE_TITLE }}, {% if user.is_authenticated %}{{ user.username }}{% else %}visitor{% endif %}!</p>
   <p>
     <strong>Total users registered: </strong> {{ count }}
+  </p>
+
+  <p>
+    Here some data from app settings: <br />
+    {{ settings.SITE_DATA|get_item:"first_sample" }} // {{ settings.SITE_DATA|get_item:"second_sample" }} 
+    // {{ settings.SITE_DATA|get_item:"third_sample" }} // {{ settings.SITE_DATA|get_item:"fourth_sample" }}
   </p>
 {% endblock %}
